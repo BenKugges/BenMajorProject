@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
-
+    public bool hasPowerUp = false;
     public float speed = 6f;
 
     public float turnSmoothTime = 0.1f;
@@ -33,5 +33,25 @@ public class PlayerController : MonoBehaviour
 
             controller.Move(direction * speed * Time.deltaTime); 
         }
+
+        if (hasPowerUp == true)
+        {
+            speed = 8f;
+        }
+
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            hasPowerUp = true;
+            Destroy(other.gameObject);
+        }
+    }
+
+
+
 }
+
+
