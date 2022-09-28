@@ -36,7 +36,12 @@ public class PlayerController : MonoBehaviour
 
         if (hasPowerUp == true)
         {
-            speed = 8f;
+            speed = 10f;
+        }
+
+        if (hasPowerUp == false)
+        {
+            speed = 6f;
         }
 
     }
@@ -47,9 +52,22 @@ public class PlayerController : MonoBehaviour
         {
             hasPowerUp = true;
             Destroy(other.gameObject);
+            StartCoroutine(PowerupCountdownRoutine());
+          
         }
+
+
+
+
+
+
     }
 
+    IEnumerator PowerupCountdownRoutine()
+    {
+        yield return new WaitForSeconds(10);
+        hasPowerUp = false;
+    }
 
 
 }
