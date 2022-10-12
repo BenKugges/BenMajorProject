@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Powerup
+  - SupplyCrate
+  - Escape
+  - Ground
   layers:
   - Default
   - TransparentFX

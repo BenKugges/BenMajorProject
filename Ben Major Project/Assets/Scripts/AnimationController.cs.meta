@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 17f24975d8f274146b998cf693169fe4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - scavPlayer: {fileID: 5426338403286812309, guid: c0e97e1719cded94491ae3b3a8aa0fd6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

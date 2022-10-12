@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class EnemyAI : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
         }
+
+
     }
 
     void UpdateDestination()
@@ -40,6 +43,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
+   
 
 }
