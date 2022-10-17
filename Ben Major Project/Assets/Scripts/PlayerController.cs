@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //This script controls the player and the player picking up powerups, as well as the powerup timer.//
     public CharacterController controller;
     public bool hasPowerUp = false;
     public float speed = 6f;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
-
+        //This controls the movement of the character. It calculates the angle that the character should be facing and turns the front of the player towards that angle.
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
             controller.Move(direction * speed * Time.deltaTime);
         }
 
+        //These functions control the powerups. The powerups increase the player speed from 4.5 to 8//
         if (hasPowerUp == true)
         {
             speed = 8f;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Powerup"))
         {
+            //If the player has the powerup it will start the coroutine which counts down the powerup duration//
             hasPowerUp = true;
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdownRoutine());
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator PowerupCountdownRoutine()
     {
+        //After 10 seconds the speed powerup will be disabled//
         yield return new WaitForSeconds(10);
         hasPowerUp = false;
     }

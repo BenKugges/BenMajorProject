@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-
+    //This script controls the movement animations of the player//
    
     public Animator scavMovement;
 
@@ -17,6 +17,10 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //This function controls the animation of the player. When one of the movement keys is held down it will play the running animation of the character. If no movement keys are held the idle animation will play.//
+        //Inputs - W,A,S,D//
+        //Outputs - Character Animation//
         if (Input.GetKey(KeyCode.W))
         {
             scavMovement.SetBool("isRunning", true);
